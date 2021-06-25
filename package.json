@@ -1,0 +1,30 @@
+{
+  "name": "parking_lot",
+  "version": "1.0.0",
+  "description": "car parking lot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/www",
+    "watch": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "nodemon": "^2.0.7",
+    "readline": "^1.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinayakshahdeo/parking_lot.git"
+  },
+  "keywords": [
+    "company",
+    "test"
+  ],
+  "author": "vinayak shahdeo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vinayakshahdeo/parking_lot/issues"
+  },
+  "homepage": "https://github.com/vinayakshahdeo/parking_lot#readme"
+}
