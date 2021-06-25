@@ -77,7 +77,8 @@
             case `3`:
                 if (!!parking) {
                     prompts.question(`Please enter car slot number :\n`, (slot) => {
-                        console.log(parking.removeACar(parseInt(slot)));
+                        //array starts from 0 so if user wants to remove car from 1 it would mean 0th position
+                        console.log(parking.removeACar(parseInt(slot - 1)));
                         askUserInputInTerminal();
                     });
                 } else {
