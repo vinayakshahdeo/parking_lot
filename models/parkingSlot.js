@@ -10,7 +10,7 @@ class ParkingSlot {
     parkACar(color, registrationNumber) {
         for (let i in this.slots) {
             //uncomment for checking the parking lot allotment
-            console.log(`slots count ${parseInt(i) + 1} and this.slots[i]: ${JSON.stringify(this.slots[i])}`);
+            // console.log(`slots count ${parseInt(i) + 1} and this.slots[i]: ${JSON.stringify(this.slots[i])}`);
             if (this.slots[i] === null) {
                 //allocate ticket with natural numbers means dont start with 0
                 this.slots[i] = new Car(color, registrationNumber, parseInt(i) + 1);
