@@ -64,13 +64,17 @@
             case `2`:
                 if (!!parking) {
                     prompts.question(`Please enter car colour and registration number separated by space :\n`, (carDetailsStr) => {
+                        if (carDetailsStr) {
+                            //splits string into two pieces
+                            let carDetails = carDetailsStr.split(' ');
+                            console.log(parking.parkACar(carDetails[0], carDetails[1]));
+                        } else {
+                            console.log(`Can't insert empty cars into parking\n`)
+                        }
                         askUserInputInTerminal();
-                        //splits string into two pieces
-                        let carDetails = carDetailsStr.split(' ');
-                        console.log(parking.parkACar(carDetails[0], carDetails[1]));
                     });
                 } else {
-                    console.log(`You have not set a parking capacity, kindly set parking capacity`);
+                    console.log(`You have not set a parking capacity, kindly set parking capacity\n`);
                     askUserInputInTerminal();
                 }
                 break;
@@ -83,7 +87,7 @@
                         askUserInputInTerminal();
                     });
                 } else {
-                    console.log(`You have not set a parking capacity, kindly set parking capacity`);
+                    console.log(`You have not set a parking capacity, kindly set parking capacity\n`);
                     askUserInputInTerminal();
                 }
                 break;
@@ -95,7 +99,7 @@
                         askUserInputInTerminal();
                     });
                 } else {
-                    console.log(`You have not set a parking capacity, kindly set parking capacity`);
+                    console.log(`You have not set a parking capacity, kindly set parking capacity\n`);
                     askUserInputInTerminal();
                 }
                 break;
@@ -107,7 +111,7 @@
                         askUserInputInTerminal();
                     });
                 } else {
-                    console.log(`You have not set a parking capacity, kindly set parking capacity`);
+                    console.log(`You have not set a parking capacity, kindly set parking capacity\n`);
                     askUserInputInTerminal();
                 }
                 break;
@@ -119,16 +123,16 @@
                         askUserInputInTerminal();
                     });
                 } else {
-                    console.log(`You have not set a parking capacity, kindly set parking capacity`);
+                    console.log(`You have not set a parking capacity, kindly set parking capacity\n`);
                     askUserInputInTerminal();
                 }
                 break;
             case `7`:
-                console.log("I hope you know what are you doing");
+                console.log(`I hope you know what are you doing`);
                 prompts.question(`Please enter Y/N :\n`, (resetDecision) => {
-                    if (resetDecision.toLowerCase() === 'y') {
+                    if (resetDecision.toLowerCase() === `y`) {
                         parking = null;
-                        console.log("App is reset");
+                        console.log(`App is reset\n`);
                     }
                     askUserInputInTerminal();
                 });
