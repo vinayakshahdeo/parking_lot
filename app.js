@@ -19,7 +19,8 @@
         choiceString += `4. Find Cars by color\n`;
         choiceString += `5. Find Parking slots by color\n`;
         choiceString += `6. Find a slot by Car registration Number\n`;
-        choiceString += `Enter your option for input :\n`
+        choiceString += `7. RESET(RESETS PARKING)\n`;
+        choiceString += `Enter your option for input :\n`;
         prompts.question(choiceString, function (data) {
             processUserInputs(data);
         });
@@ -121,6 +122,16 @@
                     console.log(`You have not set a parking capacity, kindly set parking capacity`);
                     askUserInputInTerminal();
                 }
+                break;
+            case `7`:
+                console.log("I hope you know what are you doing");
+                prompts.question(`Please enter Y/N :\n`, (resetDecision) => {
+                    if (resetDecision.toLowerCase() === 'y') {
+                        parking = null;
+                        console.log("App is reset");
+                    }
+                    askUserInputInTerminal();
+                });
                 break;
                 //problem with input prompt menu again
             default:

@@ -34,7 +34,7 @@ class ParkingSlot {
     getCarsByColor(color) {
         const carRegistrationNumbers = [];
         for (let i in this.slots) {
-            if (this.slots[i].color === color) {
+            if (this.slots[i] !== null && this.slots[i].color === color) {
                 carRegistrationNumbers.push(this.slots[i].registrationNumber)
             }
         }
@@ -47,7 +47,7 @@ class ParkingSlot {
         const slotNumbers = [];
 
         for (let i in this.slots) {
-            if (this.slots[i].color === color) {
+            if (this.slots[i] !== null && this.slots[i].color === color) {
                 slotNumbers.push(this.slots[i].slotNumber)
             }
         }
@@ -58,7 +58,7 @@ class ParkingSlot {
     getSlotByRegistrationNumber(registrationNumber) {
         //this function assumes no 2 cars can have same registration number so make sure they are separate
         for (let i in this.slots) {
-            if (this.slots[i].registrationNumber === registrationNumber) {
+            if (this.slots[i] !== null && this.slots[i].registrationNumber === registrationNumber) {
                 return this.slots[i].slotNumber;
             }
         }

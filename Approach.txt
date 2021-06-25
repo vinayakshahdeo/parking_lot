@@ -1,0 +1,24 @@
+Design a parking lot which can hold n cars of different color and different registration numbers.
+Every car needs to be issued a ticket for a spot and the spot has been assigned based on the nearest entry point.
+
+The system should also return some queries such as:
+
+* Registration numbers of all cars of a particular Color.
+* Ticket number in which a car with a given registration number is placed.
+* Ticket numbers of all ticket where a car of a particular color is placed.
+
+# This should be simple command line utility with minimum these capabilities
+- create a parking lot
+- park cars in it
+- run the above specified queries
+
+APPROACH
+
+this is a basic approach where an array is needed to store the car details which is model a class
+the array is supposed to be of no specified size since using array.fill with size given by user would yield the same
+now for storing the car details we need to see if its null or not at the location.
+array.fill would yield null to all fields intially here
+now we need to check for 2 case while entering first is null and another is if array is full
+array full means exiting with message
+now for removal for cars we need to create a logic to match the slots and also to check if slots are valid
+for rest of the things i can say that simple looping over the array check if array has null skip it if not fulfill condition
