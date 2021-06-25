@@ -9,6 +9,7 @@ class ParkingSlot {
 
     parkACar(color, registrationNumber) {
         for (let i in this.slots) {
+            //uncomment for checking the parking lot allotment
             console.log(`slots count ${parseInt(i) + 1} and this.slots[i]: ${JSON.stringify(this.slots[i])}`);
             if (this.slots[i] === null) {
                 //allocate ticket with natural numbers means dont start with 0
@@ -17,7 +18,6 @@ class ParkingSlot {
                 return `Car has been assigned the slot ${parseInt(i) + 1}`;
             }
         }
-
         return `Sorry, No slots are available`;
     }
 
@@ -33,38 +33,38 @@ class ParkingSlot {
 
     getCarsByColor(color) {
         const carRegistrationNumbers = [];
-
-        for (let slot in this.slots) {
-            if (slot.color === color) {
-                carRegistrationNumbers.push(slot.reregistrationNumber)
+        for (let i in this.slots) {
+            if (this.slots[i].color === color) {
+                carRegistrationNumbers.push(this.slots[i].registrationNumber)
             }
         }
-        console.log(carRegistrationNumbers);
+        // uncomment to see carRegistrationNumbers array
+        // console.log(carRegistrationNumbers);
         return carRegistrationNumbers ? carRegistrationNumbers : `No cars found matching the ${color} colour`;
     }
 
     getSlotsByColor(color) {
         const slotNumbers = [];
 
-        for (let slot in this.slots) {
-            if (slot.color === color) {
-                slotNumbers.push(slot.slotNumber)
+        for (let i in this.slots) {
+            if (this.slots[i].color === color) {
+                slotNumbers.push(this.slots[i].slotNumber)
             }
         }
 
-        return slotNumbers ? slotNumbers : `No slots found with cars matching the ${color} colour`;
+        return slotNumbers ? slotNumbers : `No slots found with cars matching the ${color} color`;
     }
 
     getSlotByRegistrationNumber(registrationNumber) {
-
-        for (let slot in this.slots) {
-            if (slot.registrationNumber === registrationNumber) {
-                return slot.slotNumber;
+        //this function assumes no 2 cars can have same registration number so make sure they are separate
+        for (let i in this.slots) {
+            if (this.slots[i].registrationNumber === registrationNumber) {
+                return this.slots[i].slotNumber;
             }
         }
 
 
-        return `No car found with the entered registration number`;
+        return `No car found with ${registrationNumber} registration number`;
     }
 };
 
